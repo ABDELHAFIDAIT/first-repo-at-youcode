@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 int main()
@@ -50,13 +51,9 @@ int main()
 
                  indice++ ;
 
-                 printf("\nLivre ajoute avec succes !");
+                 printf("\nLivre est ajoute avec succes !");
 
                  break ;
-
-
-
-
              case 2 :
                  for(i=0; i<indice ; i++){
                     printf("\nLivre %d : -------------------------\n", i+1);
@@ -67,14 +64,6 @@ int main()
                  }
 
                  break ;
-
-
-
-
-
-
-
-
              case 3 :
                  printf("Entrer le Titre de Livre a chercher : ");
                  scanf("%s", rechTitre);
@@ -86,37 +75,28 @@ int main()
                         break ;
                     }
                  }
-                 printf("Quantite Modifie avec Succes !");
+                 printf("Quantite est modifie avec Succes !");
                  break ;
-
-
-
-
-
              case 4 :
-                 /*printf("Entrer le Titre de Livre a supprimer : ");
-                 scanf("%99s", rechTitre[0]);
+                 printf("Entrer le Titre de Livre a supprimer : ");
+                 scanf("%s", rechTitre);
                  for(i=0 ; i<indice ; i++){
-                    if(strcmp(rechTitre[0] , titre[i])==0){
+                    if(strcmp(rechTitre , titre[i])==0){
                         posLivre = i ;
                         break ;
                     }
                  }
-                 for(i=0; i<=indice - posLivre ; i++){
-                    titre[posLivre+i-1] = titre[posLivre+i];
-                    auteur[posLivre+i-1] = auteur[posLivre+i];
-                    prix[posLivre+i-1] = prix[posLivre+i];
-                    quantite[posLivre+i-1] = quantite[posLivre+i];
+                 for(i=0 ; i<=indice-posLivre ; i++){
+                    strcpy(titre[posLivre+i] , titre[posLivre+i+1]); //equivalent a => titre[posLivre+i] = titre[posLivre+i+1];
+                    strcpy(titre[posLivre+i] , titre[posLivre+i+1]); //equivalent a => auteur[posLivre+i] = auteur[posLivre+i+1];
+                    prix[posLivre+i] = prix[posLivre+i+1];
+                    quantite[posLivre+i] = quantite[posLivre+i+1];
                  }
-                 indice--;*/
+                 printf("Supression est effectue avec succes !");
+                 indice--;
 
 
                  break ;
-
-
-
-
-
              case 5 :
                  totalQuant = 0 ;
                  for(i=0 ; i<indice ; i++){
@@ -124,36 +104,13 @@ int main()
                  }
                  printf("La Quantite Totale des Livres est : %d .", totalQuant);
                  break ;
-
-
-
-
              case 6 :
                  break ;
-
-
-
-
-
              default:
                  printf("Choix Introuvable !");
                  break ;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
